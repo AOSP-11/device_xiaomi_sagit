@@ -32,6 +32,9 @@ $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
 $(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
 $(call inherit-product-if-exists, vendor/apps/GoogleCamera/config.mk)
 
+# OTA
+$(call inherit-product-if-exists, vendor/apps/Updater/config.mk)
+
 PRODUCT_NAME := aosp_sagit_gms
 PRODUCT_DEVICE := sagit
 PRODUCT_BRAND := Xiaomi
