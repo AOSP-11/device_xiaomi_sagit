@@ -30,9 +30,6 @@ $(call inherit-product-if-exists, vendor/apps/GooglePinYin/config.mk)
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/apps/MiuiCamera/config.mk)
 
-# FaceUnlock
-$(call inherit-product-if-exists, vendor/apps/FaceUnlock/config.mk)
-
 # OTA
 $(call inherit-product-if-exists, vendor/apps/Updater/config.mk)
 

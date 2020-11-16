@@ -24,9 +24,6 @@ $(call inherit-product, device/xiaomi/sagit/device.mk)
 # Inherit some common AOSP stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-# FaceUnlock
-$(call inherit-product-if-exists, vendor/apps/FaceUnlock/config.mk)
-
 # GMS
 $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
 $(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
