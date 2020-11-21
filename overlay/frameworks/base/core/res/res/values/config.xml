@@ -143,18 +143,6 @@
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
   
-    <!--  Corner radius of system dialogs  -->
-    <dimen name="config_dialogCornerRadius">8.0dip</dimen>
-    <!--  Corner radius of system buttons  -->
-    <dimen name="config_buttonCornerRadius">4.0dip</dimen>
-    <!--  Corner radius of system progress bars  -->
-    <dimen name="config_progressBarCornerRadius">1000.0dip</dimen>
-
-    <dimen name="config_bottomDialogCornerRadius">16.0dip</dimen>
-    <item type="dimen" name="config_fullTaskSnapshotScale">0.8</item>
-    <integer name="config_maxShortcutTargetsPerApp">8</integer>
-    <integer name="config_storageManagerDaystoRetainDefault">60</integer>
-	
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
