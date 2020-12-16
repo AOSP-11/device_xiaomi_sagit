@@ -21,18 +21,28 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from sagit device
 $(call inherit-product, device/xiaomi/sagit/device.mk)
 
-# Inherit some common AOSP stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# GMS
-$(call inherit-product-if-exists, vendor/gapps/gapps.mk)
-$(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
-$(call inherit-product-if-exists, vendor/apps/GoogleCamera/config.mk)
+# GooglePinYin
+$(call inherit-product-if-exists, vendor/apps/GooglePinYin/config.mk)
+
+# MiuiCamera
+$(call inherit-product-if-exists, vendor/apps/MiuiCamera/config.mk)
 
 # OTA
-$(call inherit-product-if-exists, vendor/apps/Updater/config.mk)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    lineage.updater.uri=https://ota.sbwml.net/los18/sagit.json
 
-PRODUCT_NAME := aosp_sagit_gms
+# Face Unlock (AOSP-11)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+PRODUCT_COPY_FILES += \
+    vendor/apps/FaceUnlock/prebuilt/product/etc/default-permissions/facesense-default-permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/facesense-default-permissions.xml
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.sense_service=true
+
+PRODUCT_NAME := lineage_sagit
 PRODUCT_DEVICE := sagit
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 6
