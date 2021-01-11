@@ -13,22 +13,25 @@
 # limitations under the License.
 
 import common
+import os
+
+TARGET_DIR = os.getenv('OUT_DIR')
 
 # Firmware - sagit-firmware
 def FullOTA_InstallEnd(info):
-    common.ZipWriteStr(info.output_zip, "firmware-update/abl.elf", "device/xiaomi/sagit-firmware/firmware-update/abl.elf")
-    common.ZipWriteStr(info.output_zip, "firmware-update/BTFM.bin", "device/xiaomi/sagit-firmware/firmware-update/BTFM.bin")
-    common.ZipWriteStr(info.output_zip, "firmware-update/cmnlib64.mbn", "device/xiaomi/sagit-firmware/firmware-update/cmnlib64.mbn")
-    common.ZipWriteStr(info.output_zip, "firmware-update/cmnlib.mbn", "device/xiaomi/sagit-firmware/firmware-update/cmnlib.mbn")
-    common.ZipWriteStr(info.output_zip, "firmware-update/devcfg.mbn", "device/xiaomi/sagit-firmware/firmware-update/devcfg.mbn")
-    common.ZipWriteStr(info.output_zip, "firmware-update/hyp.mbn", "device/xiaomi/sagit-firmware/firmware-update/hyp.mbn")
-    common.ZipWriteStr(info.output_zip, "firmware-update/keymaster.mbn", "device/xiaomi/sagit-firmware/firmware-update/keymaster.mbn")
-    common.ZipWriteStr(info.output_zip, "firmware-update/logfs_ufs_8mb.bin", "device/xiaomi/sagit-firmware/firmware-update/logfs_ufs_8mb.bin")
-    common.ZipWriteStr(info.output_zip, "firmware-update/NON-HLOS.bin", "device/xiaomi/sagit-firmware/firmware-update/NON-HLOS.bin")
-    common.ZipWriteStr(info.output_zip, "firmware-update/rpm.mbn", "device/xiaomi/sagit-firmware/firmware-update/rpm.mbn")
-    common.ZipWriteStr(info.output_zip, "firmware-update/storsec.mbn", "device/xiaomi/sagit-firmware/firmware-update/storsec.mbn")
-    common.ZipWriteStr(info.output_zip, "firmware-update/tz.mbn", "device/xiaomi/sagit-firmware/firmware-update/tz.mbn")
-    common.ZipWriteStr(info.output_zip, "firmware-update/xbl.elf", "device/xiaomi/sagit-firmware/firmware-update/xbl.elf")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/abl.elf"), "firmware-update/abl.elf")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/BTFM.bin"), "firmware-update/BTFM.bin")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/cmnlib64.mbn"), "firmware-update/cmnlib64.mbn")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/cmnlib.mbn"), "firmware-update/cmnlib.mbn")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/devcfg.mbn"), "firmware-update/devcfg.mbn")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/hyp.mbn"), "firmware-update/hyp.mbn")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/keymaster.mbn"), "firmware-update/keymaster.mbn")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/logfs_ufs_8mb.bin"), "firmware-update/logfs_ufs_8mb.bin")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/NON-HLOS.bin"), "firmware-update/NON-HLOS.bin")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/rpm.mbn"), "firmware-update/rpm.mbn")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/storsec.mbn"), "firmware-update/storsec.mbn")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/tz.mbn"), "firmware-update/tz.mbn")
+    info.output_zip.write(os.path.join(TARGET_DIR, "../device/xiaomi/sagit-firmware/firmware-update/xbl.elf"), "firmware-update/xbl.elf")
 
 # Write Firmware updater-script
     info.script.AppendExtra('')
