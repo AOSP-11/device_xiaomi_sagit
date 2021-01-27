@@ -21,18 +21,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from sagit device
 $(call inherit-product, device/xiaomi/sagit/device.mk)
 
-# Inherit some common AOSP stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common dotOS stuff.
+$(call inherit-product, vendor/dot/config/common.mk)
 
-# GMS
-$(call inherit-product-if-exists, vendor/gapps/gapps.mk)
-$(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
-$(call inherit-product-if-exists, vendor/apps/GoogleCamera/config.mk)
+# GooglePinYin
+$(call inherit-product-if-exists, vendor/apps/GooglePinYin/config.mk)
+
+# MiuiCamera
+$(call inherit-product-if-exists, vendor/apps/MiuiCamera/config.mk)
 
 # OTA
 $(call inherit-product-if-exists, vendor/apps/Updater/config.mk)
 
-PRODUCT_NAME := aosp_sagit_gms
+PRODUCT_NAME := dot_sagit
 PRODUCT_DEVICE := sagit
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 6
