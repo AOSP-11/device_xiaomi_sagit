@@ -166,6 +166,7 @@ vendor/etc/qdcm_calib_data_jdi_fhd_cmd_incell_dsi_panel.xml
 vendor/etc/qdcm_calib_data_lgd_fhd_cmd_incell_dsi_panel.xml
 
 # Fingerprint
+lib64/libpowermanager.so:vendor/lib64/libpowermanager-v28.so
 vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.msm8998.so
 vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.msm8998.so
