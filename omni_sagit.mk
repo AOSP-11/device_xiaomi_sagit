@@ -26,10 +26,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8998 \
     ro.hardware.gatekeeper=msm8998
 
-# Parted
-PRODUCT_COPY_FILES += \
-    device/xiaomi/sagit/prebuilt/parted:$(PRODUCT_OUT)/recovery/root/sbin/parted
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sagit
 PRODUCT_NAME := omni_sagit
